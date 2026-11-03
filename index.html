@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Inteligente</title>
+
+    <style>
+        body {
+            background: #142238;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .painel {
+            width: 320px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #203650;
+            border-radius: 15px;
+        }
+
+        /* Imagem JPEG */
+        .foto {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Imagem SVG */
+        .icone {
+            width: 65px;
+        }
+
+        /* Imagem PNG */
+        .logo {
+            width: 70px;
+        }
+
+        /* Imagem GIF */
+        .gif {
+            width: 35px;
+        }
+
+        button {
+            background: #FCD34D;
+            color: #142238;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="painel">
+
+        <h2>Minha Casa Inteligente</h2>
+
+        <!-- JPEG: fotografia da sala -->
+        <img src="sala.jpg" class="foto" alt="Sala de estar">
+
+        <br><br>
+
+        <!-- SVG: ícone vetorial -->
+        <img src="lampada.svg" class="icone" alt="Ícone de lâmpada">
+
+        <h1>Luz da sala</h1>
+
+        <!-- PNG: imagem com transparência -->
+        <img src="lampada.png" class="logo" alt="Ilustração de lâmpada">
+
+        <br>
+
+        <!-- GIF: imagem animada -->
+        <img src="brilho.gif" class="gif" alt="Brilho animado">
+
+        <br><br>
+
+        <button onclick="ligar()">Ligar luz</button>
+
+        <p id="resultado">Luz desligada</p>
+
+    </div>
+
+    <script>
+        function ligar() {
+            document.getElementById("resultado").innerHTML =
+                "Luz ligada!";
+        }
+    </script>
+
+</body>
+</html>
