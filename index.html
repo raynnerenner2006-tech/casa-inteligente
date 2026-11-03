@@ -7,11 +7,13 @@
     <title>Casa Inteligente</title>
 
     <style>
+        /* Estilos padrão (Tema Escuro) */
         body {
             background: #142238;
             color: white;
             font-family: Arial;
             text-align: center;
+            transition: 0.3s; /* Suaviza a transição de cores */
         }
 
         .painel {
@@ -20,6 +22,7 @@
             padding: 20px;
             background: #203650;
             border-radius: 15px;
+            transition: 0.3s;
         }
 
         /* Imagem JPEG */
@@ -54,6 +57,22 @@
             cursor: pointer;
             font-weight: bold;
         }
+
+        /* --- CLASSE PARA O TEMA CLARO --- */
+        body.modo-claro {
+            background: #d9fa01;
+            color: #142238;
+        }
+
+        body.modo-claro .painel {
+            background: #ddf503;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body.modo-claro button {
+            background: #142238;
+            color: #FCD34D;
+        }
     </style>
 </head>
 
@@ -83,16 +102,19 @@
 
         <br><br>
 
-        <button onclick="ligar()">Ligar luz</button>
+        <button onclick="alternarTema()">Mudar Tema</button>
 
         <p id="resultado">Luz desligada</p>
 
     </div>
 
     <script>
-        function ligar() {
-            document.getElementById("resultado").innerHTML =
-                "Luz ligada!";
+        function alternarTema() {
+            // Pega o elemento body da página
+            let corpo = document.body;
+
+            // O método .toggle() adiciona a classe se ela não existir, ou remove se já existir
+            corpo.classList.toggle("modo-claro");
         }
     </script>
 
